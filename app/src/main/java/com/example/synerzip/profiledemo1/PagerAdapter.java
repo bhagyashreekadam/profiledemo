@@ -28,7 +28,6 @@ pos=position;
         switch (position) {
             case 0:
                 TabFragment1 tab1 = new TabFragment1();
-
                 tab1.newInstance("Tab 1");
                 return tab1;
             case 1:

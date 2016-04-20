@@ -36,10 +36,6 @@ public class MainActivity extends FragmentActivity {
     int positionForMF3;
     int positionForMF4;
     int numberOfMainFrags=4;
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,8 +91,6 @@ public class MainActivity extends FragmentActivity {
                         tab.select();
                         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
                     }
-
-
                 }
         });
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -129,13 +123,7 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onPageSelected(int position) {
                 swiped=true;
-                if(nextButtonTapped)
-                {
-                    swiped=false;
-                    nextButtonTapped=false;
-                    prevButtonTapped=false;
-                }
-                else if(prevButtonTapped)
+                if(nextButtonTapped || prevButtonTapped)
                 {
                     swiped=false;
                     nextButtonTapped=false;
@@ -143,7 +131,6 @@ public class MainActivity extends FragmentActivity {
                 }
                     int t;
                     pos = position;
-                    Log.d("sdgsdgsdgsgd", "Selected page position: " + position);
                     t = viewPager.getCurrentItem();
                     goToFragment1(pos);
                     goToFragment(t);
@@ -276,7 +263,7 @@ public class MainActivity extends FragmentActivity {
 
                 case 3:
                     prev.setVisibility(View.VISIBLE);
-                    next.setVisibility(View.GONE);
+                    next.setVisibility(View.VISIBLE);
                     prev.setImageResource(R.mipmap.three);
                     next.setImageResource(R.mipmap.add);
                     viewPager.setCurrentItem(positionForMF4);
