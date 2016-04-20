@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+        android:id="@+id/main_layout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.synerzip.profiledemo1.MainActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:id="@+id/rl">
+        <FrameLayout
+            android:id="@+id/maincontainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+        </FrameLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/main_pager"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"/>
+
+        <com.example.synerzip.profiledemo1.CircleImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pre"
+            android:id="@+id/prevButton"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:src="@mipmap/one"
+            android:onClick="prevButtonClicked"
+            android:textSize="20dp" />
+
+
+
+        <com.example.synerzip.profiledemo1.CircleImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nxt"
+            android:id="@+id/nextButton"
+            android:onClick="a1ButtonClicked"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/two"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl"
+            android:background="?attr/colorPrimary"
+            android:elevation="6dp"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/tab_layout"
+            android:nestedScrollingEnabled="false" />
+
+
+    </RelativeLayout>
